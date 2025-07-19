@@ -24,6 +24,8 @@ def productExceptSelf(nums: list[int]) -> list[int]:
     for i in range(len(nums)):
         result[i] *= prefix
         prefix *= nums[i]
+    # Calculate postfix products and combine with prefix products
+    # For each index i, multiply its prefix product with postfix product
     postfix = 1
     for i in range(len(nums) - 1, -1, -1):
         result[i] *= postfix
